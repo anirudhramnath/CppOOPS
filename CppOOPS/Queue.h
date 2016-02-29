@@ -23,7 +23,7 @@ public:
     
     int size();
     
-    String toString();
+    char * toString();
 };
 
 #endif //_QUEUE_H

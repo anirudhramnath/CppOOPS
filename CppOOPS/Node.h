@@ -12,13 +12,13 @@ public:
     /**
      * @param data
      */
-    void Node(int data);
+    Node(int data);
     
     /**
      * @param data
      * @param next
      */
-    void Node(int data, Node* next);
+    Node(int data, Node* next);
     
     int getData();
     

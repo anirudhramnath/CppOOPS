@@ -14,8 +14,8 @@
  * @param data
  * @return void
  */
-void UnorderedList::insert(int data) {
-    return;
+void UnorderedList::insert(int data, int index) {
+    AbstractCollection::add(data, index);
 }
 
 /**
@@ -23,7 +23,7 @@ void UnorderedList::insert(int data) {
  * @return void
  */
 void UnorderedList::remove(int index) {
-    return;
+    AbstractCollection::remove(index);
 }
 
 /**
@@ -31,19 +31,19 @@ void UnorderedList::remove(int index) {
  * @return int
  */
 int UnorderedList::get(int index) {
-    return 0;
+    AbstractCollection::get(index);
 }
 
 /**
  * @return int
  */
 int UnorderedList::size() {
-    return 0;
+    return AbstractCollection::size();
 }
 
 /**
  * @return String
  */
-String UnorderedList::toString() {
-    return "";
+char * UnorderedList::toString() {
+    return AbstractCollection::toString();
 }

@@ -15,33 +15,33 @@
  * @return void
  */
 void Queue::insert(int data) {
-    return;
+    AbstractCollection::add(data, size());
 }
 
 /**
  * @return void
  */
 void Queue::remove() {
-    return;
+    AbstractCollection::remove(0);
 }
 
 /**
  * @return int
  */
 int Queue::get() {
-    return 0;
+    return AbstractCollection::get(0);
 }
 
 /**
  * @return int
  */
 int Queue::size() {
-    return 0;
+    return AbstractCollection::size();
 }
 
 /**
  * @return String
  */
-String Queue::toString() {
-    return "";
+char * Queue::toString() {
+    return AbstractCollection::toString();
 }

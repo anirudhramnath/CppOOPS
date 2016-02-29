@@ -4,6 +4,9 @@
 
 
 #include "AbstractCollection.h"
+#include "string.h"
+#include "stdlib.h"
+#include "stdio.h"
 
 /**
  * AbstractCollection implementation
@@ -14,14 +17,29 @@
  * @return int
  */
 int AbstractCollection::size() {
-    return 0;
+    int i = 0; 
+    Node * current;
+    for(current = head; current; current = current->getNext()){
+        i++;
+    }
+    return i;
 }
 
 /**
  * @return String
  */
-String AbstractCollection::toString() {
-    return "";
+char * AbstractCollection::toString() {
+    int i =0;
+    char * strrep = (char *)malloc(100); 
+    Node * current;
+    for(current = head; current; current = current->getNext()){
+        char temp[3] = "";
+        sprintf(temp, "%d", i);
+        strcat(strrep, temp);
+        strcat(strrep, ", ");
+        i++;
+    }  
+    return strrep; 
 }
 
 /**
@@ -30,7 +48,31 @@ String AbstractCollection::toString() {
  * @return void
  */
 void AbstractCollection::add(int data, int index) {
-    return;
+    int i = 0;
+    Node new_node = Node(data);
+    Node * current;
+
+    if(index > size())
+        throw IndexOutOfBound();
+
+
+    if(index == 0){
+        if(current == NULL){
+            head = &new_node;
+        }else{
+            new_node.setNext(head);
+            head = &new_node;
+        }
+    }else{
+        for(current = head; current; current = current->getNext()){
+            if(index == i){
+                new_node.setNext(current->getNext());
+                current->setNext(&new_node);
+                break;
+            }
+            i++;
+        }
+    }
 }
 
 /**
@@ -54,7 +96,18 @@ void AbstractCollection::addLast(int data) {
  * @return int
  */
 int AbstractCollection::get(int index) {
-    return 0;
+    int i = 0;
+    Node * current;
+    if(index > size()-1)
+        throw IndexOutOfBound();
+
+    for(current = head; current; current = current->getNext()){
+        if(index == i){
+           return current->getData();
+        }
+        i++;
+    }
+    
 }
 
 /**
@@ -76,7 +129,25 @@ int AbstractCollection::getLast() {
  * @return void
  */
 void AbstractCollection::remove(int index) {
-    return;
+    int i = 0;
+    Node * current;
+
+    if(index > size()-1)
+        throw IndexOutOfBound();
+
+
+    if(index == 0){
+        head = head->getNext();
+    }else{
+        for(current = head; current; current = current->getNext()){
+            if(i == index-1){
+                current->setNext(current->getNext()->getNext());
+                break;
+            }
+            i++;
+        }
+    }
+
 }
 
 /**
@@ -97,5 +168,5 @@ void AbstractCollection::removeLast() {
  * @return bool
  */
 bool AbstractCollection::isEmpty() {
-    return false;
+    return head == NULL;
 }

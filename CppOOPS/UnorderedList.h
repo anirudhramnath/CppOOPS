@@ -15,7 +15,7 @@ public:
     /**
      * @param data
      */
-    void insert(int data);
+    void insert(int data, int index);
     
     /**
      * @param index
@@ -29,7 +29,7 @@ public:
     
     int size();
     
-    String toString();
+    char * toString();
 };
 
 #endif //_UNORDEREDLIST_H

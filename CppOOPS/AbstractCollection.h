@@ -1,25 +1,28 @@
 /**
  * Project Untitled
  */
-
+#include "Node.h"
 
 #ifndef _ABSTRACTCOLLECTION_H
 #define _ABSTRACTCOLLECTION_H
 
 class AbstractCollection {
-protected: 
     Node* head;
     Node* tail;
-    int size;
     
-    int size();
     
-    String toString();
     
+    
+    public:
     /**
      * @param data
      * @param index
      */
+
+    int size();
+
+    char * toString();
+    
     void add(int data, int index);
     
     /**
@@ -51,6 +54,8 @@ protected:
     void removeLast();
     
     bool isEmpty();
+};
+class IndexOutOfBound {
 };
 
 #endif //_ABSTRACTCOLLECTION_H

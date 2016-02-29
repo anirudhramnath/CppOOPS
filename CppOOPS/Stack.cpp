@@ -15,33 +15,33 @@
  * @return void
  */
 void Stack::insert(int data) {
-    return;
+    AbstractCollection::add(data, 0);
 }
 
 /**
  * @return void
  */
 void Stack::remove() {
-    return;
+    AbstractCollection::remove(0);
 }
 
 /**
  * @return int
  */
 int Stack::get() {
-    return 0;
+    return AbstractCollection::get(0);
 }
 
 /**
  * @return int
  */
 int Stack::size() {
-    return 0;
+    return AbstractCollection::size();
 }
 
 /**
  * @return String
  */
-String Stack::toString() {
-    return "";
+char * Stack::toString() {
+    return AbstractCollection::toString();
 }
