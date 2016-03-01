@@ -25,19 +25,23 @@ int main() {
     AbstractCollection* lists[8];
 
     cout<< "Enter operation or enter 'h' to view various commands being used for this program\n\n";
-    char operation;
+    string operation;
 
-    cin>>operation;
+    getline(cin, operation);
 
-    while(operation != 'q') {
-        switch (operation) {
-            case 'h': cout << HELP;
-                      break;
-            case 'a': cout << ABOUT;
-                      break;
+    while(operation.compare("q") !=0) {
+        if (operation.compare("h") == 0) {
+            cout << HELP;
         }
+        else if (operation.compare("a") == 0) {
+            cout << ABOUT;
+        }
+        else {
+            cout << "Invalid input";
+        }
+
         cout << "Enter operation or enter 'h' to view various commands being used for this program\n\n";
-        cin>>operation;
+        getline(cin, operation);
     }
 
     cout << "Quitting program";
