@@ -4,6 +4,8 @@
 #include "AbstractCollection.h"
 #include "OrderedList.h"
 #include "UnorderedList.h"
+#include "Stack.h"
+#include "Queue.h"
 
 #define ABOUT "Created By:\n-----------\nAnirudh Ramnath \
 (aramna2)\nSuriya Sundar Sampath (ssampa7)\n\n"
