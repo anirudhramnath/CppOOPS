@@ -15,7 +15,7 @@
  * @return void
  */
 void Stack::insert(int data) {
-    AbstractCollection::add(data, 0);
+    AbstractCollection::insert(data, 0);
 }
 
 /**

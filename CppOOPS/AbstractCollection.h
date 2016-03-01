@@ -7,13 +7,14 @@
 #define _ABSTRACTCOLLECTION_H
 
 class AbstractCollection {
-    Node* head;
-    Node* tail;
+    Node* head ;
+    Node* tail ;
     
     
     
     
     public:
+    AbstractCollection();
     /**
      * @param data
      * @param index

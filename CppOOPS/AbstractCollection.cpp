@@ -16,6 +16,10 @@
 /**
  * @return int
  */
+AbstractCollection::AbstractCollection(){
+    head = 0;
+    tail = 0;
+}
 int AbstractCollection::size() {
     int i = 0; 
     Node * current;
@@ -34,7 +38,7 @@ char * AbstractCollection::toString() {
     Node * current;
     for(current = head; current; current = current->getNext()){
         char temp[3] = "";
-        sprintf(temp, "%d", i);
+        sprintf(temp, "%d", current->getData());
         strcat(strrep, temp);
         strcat(strrep, ", ");
         i++;
@@ -49,7 +53,7 @@ char * AbstractCollection::toString() {
  */
 void AbstractCollection::insert(int data, int index) {
     int i = 0;
-    Node new_node = Node(data);
+    Node * new_node = new Node(data);
     Node * current;
 
     if(index > size())
@@ -57,21 +61,29 @@ void AbstractCollection::insert(int data, int index) {
 
 
     if(index == 0){
-        if(current == NULL){
-            head = &new_node;
+        if(!head){
+            head = new_node;
         }else{
-            new_node.setNext(head);
-            head = &new_node;
+            new_node->setNext(head);
+            head = new_node;
         }
-    }else{
+    }else if(index<size()){
         for(current = head; current; current = current->getNext()){
-            if(index == i){
-                new_node.setNext(current->getNext());
-                current->setNext(&new_node);
+            if(i == index-1){
+                new_node->setNext(current->getNext());
+                current->setNext(new_node);
                 break;
             }
             i++;
         }
+    }else{
+        for(current = head; current; current = current->getNext()){
+            if(i == index-1){
+                break;
+            }
+            i++;
+        } 
+        current->setNext(new_node);   
     }
 }
 
@@ -168,5 +180,5 @@ void AbstractCollection::removeLast() {
  * @return bool
  */
 bool AbstractCollection::isEmpty() {
-    return head == NULL;
+    return !head;
 }
