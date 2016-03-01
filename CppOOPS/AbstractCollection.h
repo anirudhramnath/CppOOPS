@@ -21,9 +21,9 @@ class AbstractCollection {
 
     int size();
 
-    char * toString();
+    virtual char * toString();
     
-    void add(int data, int index);
+    virtual void insert(int data, int index);
     
     /**
      * @param data
@@ -38,7 +38,7 @@ class AbstractCollection {
     /**
      * @param index
      */
-    int get(int index);
+    virtual int get(int index);
     
     int getFirst();
     
@@ -47,13 +47,13 @@ class AbstractCollection {
     /**
      * @param index
      */
-    void remove(int index);
+    virtual void remove(int index);
     
     void removeFirst();
     
     void removeLast();
     
-    bool isEmpty();
+    virtual bool isEmpty();
 };
 class IndexOutOfBound {
 };

@@ -47,7 +47,7 @@ char * AbstractCollection::toString() {
  * @param index
  * @return void
  */
-void AbstractCollection::add(int data, int index) {
+void AbstractCollection::insert(int data, int index) {
     int i = 0;
     Node new_node = Node(data);
     Node * current;

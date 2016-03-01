@@ -13,32 +13,32 @@
 /**
  * @param data
  */
-void Node::Node(int data) {
-    this.data = data;
-    this.next = NULL;
+Node::Node(int data) {
+    this->data = data;
+    this->next = 0;
 }
 
 /**
  * @param data
  * @param next
  */
-void Node::Node(int data, Node* next) {
-    this.data = data;
-    this.next = next;
+Node::Node(int data, Node* next) {
+    this->data = data;
+    this->next = next;
 }
 
 /**
  * @return int
  */
 int Node::getData() {
-    return this.data;
+    return this->data;
 }
 
 /**
  * @return Node*
  */
 Node* Node::getNext() {
-    return this.next;
+    return this->next;
 }
 
 /**
@@ -46,5 +46,5 @@ Node* Node::getNext() {
  * @return void
  */
 void Node::setNext(Node* next) {
-    this.next = next;
+    this->next = next;
 }
