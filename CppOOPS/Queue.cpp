@@ -15,7 +15,7 @@
  * @return void
  */
 void Queue::insert(int data) {
-    AbstractCollection::add(data, size());
+    AbstractCollection::insert(data, size());
 }
 
 /**

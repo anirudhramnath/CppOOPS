@@ -1,5 +1,8 @@
 #include "stdio.h"
 #include "OrderedList.h"
+#include "Stack.h"
+#include "Queue.h"
+#include "UnorderedList.h"
 int main()
 {
 OrderedList list = OrderedList();

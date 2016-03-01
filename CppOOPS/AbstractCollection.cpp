@@ -142,14 +142,16 @@ int AbstractCollection::getLast() {
  */
 void AbstractCollection::remove(int index) {
     int i = 0;
-    Node * current;
+    Node * current, *temp;
 
     if(index > size()-1)
         throw IndexOutOfBound();
 
 
     if(index == 0){
+        temp = head;
         head = head->getNext();
+        delete temp;
     }else{
         for(current = head; current; current = current->getNext()){
             if(i == index-1){
