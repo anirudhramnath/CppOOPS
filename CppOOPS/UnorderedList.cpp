@@ -15,7 +15,7 @@
  * @return void
  */
 void UnorderedList::insert(int data, int index) {
-    AbstractCollection::add(data, index);
+    AbstractCollection::insert(data, index);
 }
 
 /**
