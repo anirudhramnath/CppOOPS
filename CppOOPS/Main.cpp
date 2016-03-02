@@ -36,6 +36,11 @@ int main() {
 
     AbstractCollection* lists[8];
 
+    Stack * temp_stack;
+    Queue * temp_queue;
+    OrderedList * temp_ol;
+    UnorderedList * temp_ul;
+
     cout<< "Enter operation or enter 'h' to view various commands being used for this program\n\n";
     string operation;
 
@@ -64,6 +69,19 @@ int main() {
         }
         // Match REMOVE_VAL
         else if (regex_match(operation , match , REMOVE_VAL)) {
+            int list_index = stoi(match[1]);
+            if(temp_queue = dynamic_cast<Queue>(lists[list_index]){
+                list[list_index]->remove();
+            }
+            else if(temp_queue = dynamic_cast<Queue>(lists[list_index]){
+                list[list_index]->remove();
+            }
+            if(temp_queue = dynamic_cast<Queue>(lists[list_index]){
+                list[list_index]->remove();
+            }
+            if(temp_queue = dynamic_cast<Queue>(lists[list_index]){
+                list[list_index]->remove();
+            }
             cout << "Matched REMOVE_VAL"<<endl;
         }
         // Match LIST_INFO
