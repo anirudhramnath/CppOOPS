@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _STACK_H
 #define _STACK_H
@@ -11,21 +7,21 @@
 
 
 class Stack: public AbstractCollection {
-public: 
-    
+public:
+
     /**
      * @param data
      */
     Stack();
 
     void insert(int data);
-    
+
     void remove();
-    
+
     int get();
-    
+
     int size();
-    
+
     std::string toString();
 };
 

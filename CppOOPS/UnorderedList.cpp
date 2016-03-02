@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #include "UnorderedList.h"
 #include <string>

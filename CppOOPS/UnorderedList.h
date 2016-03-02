@@ -1,6 +1,3 @@
-/**
- * Project Untitled
- */
 
 
 #ifndef _UNORDEREDLIST_H
@@ -11,24 +8,24 @@
 
 
 class UnorderedList: public AbstractCollection {
-public: 
-    
+public:
+
     /**
      * @param data
      */
-    void insert(int data);    
+    void insert(int data);
     /**
      * @param index
      */
     void remove(int index);
-    
+
     /**
      * @param index
      */
     int get(int index);
-    
+
     int size();
-    
+
     std::string toString();
 };
 

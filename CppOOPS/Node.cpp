@@ -1,8 +1,4 @@
-/**
- * Project Untitled
- */
 
-#include "stdio.h"
 #include "Node.h"
 
 /**

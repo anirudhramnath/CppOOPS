@@ -1,6 +1,3 @@
-/**
- * Project Untitled
- */
 
 
 #include "OrderedList.h"

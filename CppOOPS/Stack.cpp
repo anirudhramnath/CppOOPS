@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #include "Stack.h"
 #include <string>
@@ -10,7 +6,7 @@
  * Stack implementation
  */
 
-Stack::Stack() 
+Stack::Stack()
 {
     AbstractCollection::AbstractCollection();
 }

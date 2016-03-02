@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #include "AbstractCollection.h"
 #include <string>
@@ -23,7 +19,7 @@ AbstractCollection::AbstractCollection(){
     tail = 0;
 }
 int AbstractCollection::size() {
-    int i = 0; 
+    int i = 0;
     Node * current;
     for(current = head; current; current = current->getNext()){
         i++;
@@ -41,8 +37,8 @@ std::string AbstractCollection::toString() {
     for(current = head; current; current = current->getNext()){
         strrep += std::to_string(current->getData()) + ", ";
         i++;
-    }  
-    return strrep; 
+    }
+    return strrep;
 }
 
 /**
@@ -81,29 +77,13 @@ void AbstractCollection::insert(int data, int index) {
                 break;
             }
             i++;
-        } 
-        current->setNext(new_node);   
+        }
+        current->setNext(new_node);
     }
 }
 
 void AbstractCollection::insert(int data) {
     // implementation will be done in child classes
-}
-
-/**
- * @param data
- * @return void
- */
-void AbstractCollection::addFirst(int data) {
-    return;
-}
-
-/**
- * @param data
- * @return void
- */
-void AbstractCollection::addLast(int data) {
-    return;
 }
 
 /**
@@ -126,20 +106,7 @@ int AbstractCollection::get(int index) {
 }
 
 int AbstractCollection::get() {
-}
-
-/**
- * @return int
- */
-int AbstractCollection::getFirst() {
-    return 0;
-}
-
-/**
- * @return int
- */
-int AbstractCollection::getLast() {
-    return 0;
+    // implementation will be done in child classes
 }
 
 /**
@@ -172,20 +139,6 @@ void AbstractCollection::remove(int index) {
 
 void AbstractCollection::remove() {
     // implementation in child class
-}
-
-/**
- * @return void
- */
-void AbstractCollection::removeFirst() {
-    return;
-}
-
-/**
- * @return void
- */
-void AbstractCollection::removeLast() {
-    return;
 }
 
 /**

@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _QUEUE_H
 #define _QUEUE_H
@@ -11,19 +7,19 @@
 
 
 class Queue: public AbstractCollection {
-public: 
-    
+public:
+
     /**
      * @param data
      */
     void insert(int data);
-    
+
     void remove();
-    
+
     int get();
-    
+
     int size();
-    
+
     std::string toString();
 };
 
