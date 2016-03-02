@@ -58,18 +58,22 @@ int main() {
                 lists[listNum] = new Stack();
             else if (datatype.compare("q") == 0)
                 lists[listNum] = new Queue();
-            else if (datatype.compare("q") == 0)
+            else if (datatype.compare("o") == 0)
                 lists[listNum] = new OrderedList();
-            else if (datatype.compare("q") == 0)
+            else if (datatype.compare("u") == 0)
                 lists[listNum] = new UnorderedList();
-            /*
-            This is how you access the matches.
-            match[0], match[1] ... etc
-            */
         }
         // Match INSERT_LIST
         else if (regex_match(operation , match , INSERT_LIST)) {
-            cout << "Matched INSERT_LIST"<<endl;
+            int valueToInsert = stoi(match[2]);
+            int listNum = stoi(match[1]) - 1;
+
+            if (NULL == lists[listNum]) {
+                cout << "List number "<<listNum<<" is empty!";
+            }
+            else {
+                lists[listNum]->insert(valueToInsert);
+            }
         }
         // Match REMOVE_VAL
         else if (regex_match(operation , match , REMOVE_VAL)) {
