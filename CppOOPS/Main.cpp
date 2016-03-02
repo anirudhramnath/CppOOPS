@@ -29,11 +29,12 @@ using namespace std;
 int main() {
 
     // Strings used for regex
-    regex INIT_LIST ("s ([1-8]) (u|o|q|s)");
-    regex INSERT_LIST ("i ([1-8]) (\\d+)");
-    regex REMOVE_VAL ("r ([1-8])");
-    regex LIST_INFO ("l ([1-8])");
-    regex GET_VAL ("g ([1-8])");
+    regex INIT_LIST ("[ ]*s[ ]+([1-8])[ ]+(u|o|q|s)[ ]*");
+    regex INSERT_LIST ("[ ]*i[ ]+([1-8])[ ]+(\\d+)[ ]*");
+    regex REMOVE_VAL ("[ ]*r[ ]+([1-8])[ ]*");
+    regex LIST_INFO ("[ ]*l[ ]+([1-8])[ ]*");
+    regex GET_VAL ("[ ]*g[ ]+([1-8])[ ]*");
+    regex COMMENT ("[ ]*#.*");
 
     AbstractCollection* lists[8] = {NULL}; // Stores all lists
 
@@ -55,6 +56,10 @@ int main() {
         }
         else if (operation.compare("a") == 0) {
             cout << ABOUT;
+        }
+        // Match COMMENT
+        else if (regex_match(operation , match , COMMENT)) {
+            cout << "Ignoring comment"<< endl;
         }
         // Match INIT_LIST
         else if (regex_match(operation , match , INIT_LIST)) {
