@@ -14,8 +14,10 @@
  * @param data
  * @return void
  */
+void UnorderedList::insert(int data) {
+    AbstractCollection::insert(data, 0);
+}
 void UnorderedList::insert(int data, int index) {
-    AbstractCollection::insert(data, index);
 }
 
 /**
