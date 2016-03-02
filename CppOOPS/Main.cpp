@@ -34,7 +34,7 @@ int main() {
     regex LIST_INFO ("l ([1-8])");
     regex GET_VAL ("g ([1-8])");
 
-    AbstractCollection* lists[8];
+    AbstractCollection* lists[8]; // Stores all lists
 
     cout<< "Enter operation or enter 'h' to view various commands being used for this program\n\n";
     string operation;
@@ -52,7 +52,16 @@ int main() {
         }
         // Match INIT_LIST
         else if (regex_match(operation , match , INIT_LIST)) {
-            cout << "Matched INIT_LIST"<<endl;
+            string datatype = match[2];
+            int listNum = stoi(match[1]) - 1;
+            if (datatype.compare("s") == 0)
+                lists[listNum] = new Stack();
+            else if (datatype.compare("q") == 0)
+                lists[listNum] = new Queue();
+            else if (datatype.compare("q") == 0)
+                lists[listNum] = new OrderedList();
+            else if (datatype.compare("q") == 0)
+                lists[listNum] = new UnorderedList();
             /*
             This is how you access the matches.
             match[0], match[1] ... etc
