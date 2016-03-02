@@ -7,6 +7,7 @@
 #define _QUEUE_H
 
 #include "AbstractCollection.h"
+#include <string>
 
 
 class Queue: public AbstractCollection {
@@ -23,7 +24,7 @@ public:
     
     int size();
     
-    char * toString();
+    std::string toString();
 };
 
 #endif //_QUEUE_H

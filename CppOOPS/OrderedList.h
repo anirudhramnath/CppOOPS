@@ -7,6 +7,7 @@
 #define _ORDEREDLIST_H
 
 #include "UnorderedList.h"
+#include <string>
 
 
 class OrderedList: public AbstractCollection {
@@ -28,7 +29,7 @@ public:
     
     int size();
     
-    char * toString();
+    std::string toString();
 
 };
 

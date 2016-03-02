@@ -4,6 +4,7 @@
 
 
 #include "Queue.h"
+#include <string>
 
 /**
  * Queue implementation
@@ -42,6 +43,6 @@ int Queue::size() {
 /**
  * @return String
  */
-char * Queue::toString() {
+std::string Queue::toString() {
     return AbstractCollection::toString();
 }

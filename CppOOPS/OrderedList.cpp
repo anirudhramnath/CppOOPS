@@ -5,6 +5,7 @@
 
 #include "OrderedList.h"
 #include "stdio.h"
+#include <string>
 
 /**
  * OrderedList implementation
@@ -46,7 +47,7 @@ void OrderedList::remove(int index) {
  * @return int
  */
 int OrderedList::get(int index) {
-    AbstractCollection::get(index);
+    return AbstractCollection::get(index);
 }
 
 /**
@@ -59,6 +60,6 @@ int OrderedList::size() {
 /**
  * @return String
  */
-char * OrderedList::toString() {
+std::string OrderedList::toString() {
     return AbstractCollection::toString();
 }

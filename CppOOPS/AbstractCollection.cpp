@@ -4,9 +4,11 @@
 
 
 #include "AbstractCollection.h"
-#include "string.h"
+#include <string>
 #include "stdlib.h"
-#include "stdio.h"
+#include  <iostream>
+
+ using namespace std;
 
 /**
  * AbstractCollection implementation
@@ -32,15 +34,12 @@ int AbstractCollection::size() {
 /**
  * @return String
  */
-char * AbstractCollection::toString() {
+std::string AbstractCollection::toString() {
     int i =0;
-    char * strrep = (char *)malloc(100); 
+    std::string strrep;
     Node * current;
     for(current = head; current; current = current->getNext()){
-        char temp[3] = "";
-        sprintf(temp, "%d", current->getData());
-        strcat(strrep, temp);
-        strcat(strrep, ", ");
+        strrep += std::to_string(current->getData()) + ", ";
         i++;
     }  
     return strrep; 
@@ -87,6 +86,10 @@ void AbstractCollection::insert(int data, int index) {
     }
 }
 
+void AbstractCollection::insert(int data) {
+    // implementation will be done in child classes
+}
+
 /**
  * @param data
  * @return void
@@ -110,16 +113,19 @@ void AbstractCollection::addLast(int data) {
 int AbstractCollection::get(int index) {
     int i = 0;
     Node * current;
-    if(index > size()-1)
+    if(index > size()-1 || index < 0)
         throw IndexOutOfBound();
 
     for(current = head; current; current = current->getNext()){
         if(index == i){
+            cout<<"return from get:"<<current->getData()<<endl;
            return current->getData();
         }
         i++;
     }
-    
+}
+
+int AbstractCollection::get() {
 }
 
 /**
@@ -162,6 +168,10 @@ void AbstractCollection::remove(int index) {
         }
     }
 
+}
+
+void AbstractCollection::remove() {
+    // implementation in child class
 }
 
 /**

@@ -7,6 +7,7 @@
 #define _STACK_H
 
 #include "AbstractCollection.h"
+#include <string>
 
 
 class Stack: public AbstractCollection {
@@ -25,7 +26,7 @@ public:
     
     int size();
     
-    char * toString();
+    std::string toString();
 };
 
 #endif //_STACK_H

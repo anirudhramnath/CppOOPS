@@ -4,6 +4,7 @@
 
 
 #include "UnorderedList.h"
+#include <string>
 
 /**
  * UnorderedList implementation
@@ -31,7 +32,7 @@ void UnorderedList::remove(int index) {
  * @return int
  */
 int UnorderedList::get(int index) {
-    AbstractCollection::get(index);
+    return AbstractCollection::get(index);
 }
 
 /**
@@ -44,6 +45,6 @@ int UnorderedList::size() {
 /**
  * @return String
  */
-char * UnorderedList::toString() {
+std::string UnorderedList::toString() {
     return AbstractCollection::toString();
 }

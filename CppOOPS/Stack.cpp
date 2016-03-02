@@ -4,6 +4,7 @@
 
 
 #include "Stack.h"
+#include <string>
 
 /**
  * Stack implementation
@@ -45,6 +46,6 @@ int Stack::size() {
 /**
  * @return String
  */
-char * Stack::toString() {
+std::string Stack::toString() {
     return AbstractCollection::toString();
 }
