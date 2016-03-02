@@ -15,6 +15,8 @@ public:
     /**
      * @param data
      */
+    Stack();
+
     void insert(int data);
     
     void remove();

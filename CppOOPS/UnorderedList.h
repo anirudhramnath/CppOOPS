@@ -15,9 +15,7 @@ public:
     /**
      * @param data
      */
-    void insert(int data);
-    void insert(int data, int index);
-    
+    void insert(int data);    
     /**
      * @param index
      */

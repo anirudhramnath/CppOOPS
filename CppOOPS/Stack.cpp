@@ -9,7 +9,10 @@
  * Stack implementation
  */
 
-
+Stack::Stack() 
+{
+    AbstractCollection::AbstractCollection();
+}
 /**
  * @param data
  * @return void

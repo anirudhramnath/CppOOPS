@@ -17,8 +17,6 @@
 void UnorderedList::insert(int data) {
     AbstractCollection::insert(data, 0);
 }
-void UnorderedList::insert(int data, int index) {
-}
 
 /**
  * @param index
